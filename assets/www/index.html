@@ -1,10 +1,39 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-<title>PhoneGap</title>
-<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-</head>
-<body>
-<h1>Hello World</h1>
-</body>
+  <head>
+    <title>FlamesGame</title>
+    <link rel=StyleSheet href="style.css" type="text/css">
+    <script type="text/javascript" charset="utf-8" src="phonegap.0.9.5.js"></script>
+    <script type="text/javascript" charset="utf-8" src="xui-2.0.0.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="application.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Flames</h1>
+    </div>
+    <div class="container">
+      <div class="title-div"><h2 class="center">Do you know your partner?</h2></div>
+	<div class="content-div center">
+	  <div>
+	    <label class="error"></label>
+	  </div>
+	  <form id="flames-form" method="post">
+	    <input type="hidden" name="security" value=""/>
+	    <div class="your-name">
+	      <input type="text" class="input-field" name="your_name" id="your_name" placeholder="Your Name"/>
+	    </div>
+	    <div class="partner-name">
+	      <input type="text" class="input-field" name="partner_name" id="partner_name" placeholder="Dream Partner"/>
+	    </div>
+	    <div class="submit-button"><img src="ajax-loader.gif" id="load"/><input id="submit" type="button" value="Show Me"></div>
+	  </form>
+	  <div id="result"> 
+	    <h3></h3>
+	  </div>
+	</div>
+	<div class="footer center">
+	  <a class="about-me" href="http://about.me/abhidsm">About Me</a>
+	</div>
+    </div>
+  </body>
 </html>
