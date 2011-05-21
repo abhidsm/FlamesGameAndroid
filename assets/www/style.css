@@ -1,6 +1,8 @@
 .about-me {
     text-decoration: none;
-    color: #fff;
+    color: #96134E;
+    float: right;
+    padding: 5px;
 }
 a.about-me:hover {
     text-decoration:underline;
@@ -52,6 +54,10 @@ label.error {
 .M { background-color: #B93B8F }
 .E { background-color: #FF0000 }
 .S { background-color: #87F717 }
+#result h3 {
+    margin: 0px;
+    padding-bottom: 10px;
+}
 #result {
     display: none;
     margin-left: 20px;
