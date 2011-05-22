@@ -4,11 +4,13 @@ x$(window).load(function(e){
 
 function bindFormSubmitAction() {
     x$("#submit").on('click', function(e){
-	    formSubmitAction();
+	    formSubmitAction(e);
 	});
 }
 
-function formSubmitAction() {
+function formSubmitAction(e) {
+    e.preventDefault();
+    navigator.notification.vibrate(100);// For vibration
     yourName = x$('#your_name')[0].value;
     partnerName = x$('#partner_name')[0].value;
     if(yourName != "" && partnerName != "") { 
@@ -20,8 +22,8 @@ function formSubmitAction() {
 		    data: params,
 		    callback: function() {
 		    returnData = this.responseText;
-		    var result = eval(returnData).flames.result;
-		    var status = eval(returnData).flames.status;
+		    var result = eval("("+returnData+")").flames.result;
+		    var status = eval("("+returnData+")").flames.status;
 		    x$('#result h3').html(result);
 		    resetResultClass();
 		    x$('#result').addClass(status);
