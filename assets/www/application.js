@@ -14,7 +14,8 @@ function formSubmitAction(e) {
     yourName = x$('#your_name')[0].value;
     partnerName = x$('#partner_name')[0].value;
     if(yourName != "" && partnerName != "") { 
-	x$('#submit').fade('out');
+	x$('#submit').setStyle('display', 'none');	
+	navigator.notification.activityStart(); 
 	var params = 'security=&your_name='+yourName+'&partner_name='+partnerName;
 	x$("#result").xhr('http://flamesgame.appspot.com/show', {
 		async:true,
@@ -33,14 +34,15 @@ function formSubmitAction(e) {
 }
 
 function resetResultClass(){
+	navigator.notification.activityStop(); 	
     x$('#result').removeClass();
     x$('#result').addClass('center');
     x$('#result').setStyle('display', 'block');
     x$('#result').tween({opacity:'1', duration:2000});
-    x$('#result').tween({opacity:'0', duration:2000}, function(){
+    x$('#result').tween({opacity:'0', duration:3000}, function(){
 	    x$('#result').setStyle('display', 'none');
 	    x$('#result').setStyle('opacity', '1');
-	    x$('#submit').fade('in');
+	    x$('#submit').setStyle('display', 'inline');
 	});
 }
 
