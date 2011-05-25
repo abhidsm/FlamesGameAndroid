@@ -16,7 +16,7 @@ function formSubmitAction(e) {
     if(yourName != "" && partnerName != "") { 
 	x$('#submit').setStyle('display', 'none');	
 	navigator.notification.activityStart(); 
-	var params = 'security=&your_name='+yourName+'&partner_name='+partnerName;
+	var params = 'source=android&security=&your_name='+yourName+'&partner_name='+partnerName;
 	x$("#result").xhr('http://flamesgame.appspot.com/show', {
 		async:true,
 		    method:'post',
