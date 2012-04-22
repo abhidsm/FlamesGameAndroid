@@ -16,7 +16,7 @@ android:anyDensity="true"
 
     <uses-sdk android:minSdkVersion="7" />
 
-    <application android:icon="@drawable/icon" android:label="@string/app_name">
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:configChanges="orientation|keyboardHidden">
         <activity android:name=".FlamesGame"
                   android:label="@string/app_name">
             <intent-filter>
@@ -24,6 +24,9 @@ android:anyDensity="true"
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+	<activity android:name="org.apache.cordova.DroidGap" android:label="@string/app_name" android:configChanges="orientation|keyboardHidden"> 
+		<intent-filter> 
+		</intent-filter> 
+	</activity> 
     </application>
 </manifest>
